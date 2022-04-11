@@ -5,7 +5,7 @@ export interface IThemeContext {
   baseUrl?: string;
   storeId?: string;
   storeName?: string;
-  language?: Language;
+  defaultLanguage?: Language;
   availLanguages?: Language[];
   catalogId?: string;
   currency?: CurrencyType;

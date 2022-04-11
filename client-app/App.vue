@@ -22,6 +22,7 @@ import { setCatalogId, setUserId, setLocale } from "@/core/constants";
 import { PopupHost } from "@/shared/popup";
 import { NotificationsHost } from "@/shared/notification";
 import { RouteRecordName, useRouter } from "vue-router";
+import { i18n } from "./i18n";
 
 const router = useRouter();
 const breakpoints = useBreakpoints(breakpointsTailwind);
@@ -69,7 +70,10 @@ onMounted(async () => {
   // temporary solution
   setUserId(themeContext.userId || me.value?.id);
   setCatalogId(themeContext.catalogId!);
-  setLocale(themeContext.language?.cultureName || "en-US");
+  setLocale(
+    themeContext.availLanguages?.find((x) => x.twoLetterLanguageName === i18n?.global.locale.value)?.cultureName ||
+      "en-US"
+  );
 
   await loadMyCart();
   loaded.value = true;
