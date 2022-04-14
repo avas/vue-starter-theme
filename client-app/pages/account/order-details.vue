@@ -69,6 +69,41 @@
             {{ $t("pages.account.order_details.reorder_all_button") }}
           </VcButton>
 
+          <VcCard :title="$t('pages.account.order_details.loyalty_card.title')" :is-collapsible="true" class="mb-5">
+            <div v-if="orderLoading" class="h-20 bg-gray-200 animate-pulse"></div>
+
+            <div v-else>
+              <span
+                v-if="order?.loyaltyCalculated"
+                v-html="
+                  $t('pages.account.order_details.loyalty_card.calculated', {
+                    points: $t('pages.account.order_details.loyalty_card.points', order.loyaltyPointsAmount ?? 0, {
+                      n: order.loyaltyPointsAmount,
+                    }),
+                  })
+                "
+              >
+              </span>
+              <span v-else>
+                {{ $t("pages.account.order_details.loyalty_card.not_calculated") }}
+              </span>
+
+              <div class="mt-3">
+                <VcButton
+                  class="px-2 py-1 uppercase !text-xs !h-auto"
+                  is-outline
+                  :to="{ name: 'LoyaltyPointsOperations' }"
+                >
+                  {{
+                    order?.loyaltyCalculated
+                      ? $t("pages.account.order_details.loyalty_card.review_balance_button")
+                      : $t("pages.account.order_details.loyalty_card.learn_more_button")
+                  }}
+                </VcButton>
+              </div>
+            </div>
+          </VcCard>
+
           <VcCard
             :title="$t('pages.account.order_details.shipping_address_card.title')"
             :is-collapsible="true"
@@ -184,10 +219,22 @@ import _ from "lodash";
 import { usePopup } from "@/shared/popup";
 import { useProducts } from "@/shared/catalog";
 import { useI18n } from "vue-i18n";
+import { breakpointsTailwind, useBreakpoints } from "@vueuse/core";
 
 const { t } = useI18n();
 
-const { itemsPerPage, pages, order, deliveryAddress, billingAddress, loadOrder } = useUserOrder();
+const breakpoints = useBreakpoints(breakpointsTailwind);
+const isMobile = breakpoints.smaller("md");
+
+const {
+  loading: orderLoading,
+  itemsPerPage,
+  pages,
+  order,
+  deliveryAddress,
+  billingAddress,
+  loadOrder,
+} = useUserOrder();
 const { fetchProducts, products } = useProducts();
 const { openPopup } = usePopup();
 

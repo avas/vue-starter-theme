@@ -26,6 +26,7 @@ const ListDetails = () => import("./pages/account/list-details.vue");
 const Profile = () => import("./pages/account/profile.vue");
 const DemoLanding = () => import("./pages/demo-landing/demo-landing.vue");
 const CompareProducts = () => import("./pages/compare-products/compare-products.vue");
+const LoyaltyPointsOperations = () => import("./pages/loyalty/loyalty.vue");
 
 const DevUIKit = () => import("./pages/_ui-kit/ui-kit.vue");
 
@@ -49,6 +50,7 @@ const routes: RouteRecordRaw[] = [
       { path: "order-details/:id", name: "OrderDetails", component: OrderDetails },
       { path: "lists", name: "Lists", component: Lists },
       { path: "lists/:listId", name: "ListDetails", component: ListDetails, props: true },
+      { path: "loyalty", name: "LoyaltyPointsOperations", component: LoyaltyPointsOperations },
     ],
   },
   { path: "/forgot-password", name: "ForgotPassword", component: ForgotPassword },

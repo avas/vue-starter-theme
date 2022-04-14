@@ -1,0 +1,7 @@
+#import "../../../fragments/pointsOperationFields.graphql"
+
+mutation RegisterPointsOperation($command: InputRegisterPointsOperationType!) {
+    registerPointsOperation(command: $command) {
+        ...pointsOperationFields
+    }
+}

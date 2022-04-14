@@ -1,0 +1,28 @@
+#import "../../../fragments/pointsOperationFields.graphql"
+
+query searchMyPointsOperations(
+  $userId: String!
+  $storeId: String
+  $isDeposit: Boolean
+  $createdSince: DateTime
+  $createdTill: DateTime
+  $after: String
+  $first: Int
+  $sort: String
+) {
+  pointsOperations(
+    userId: $userId
+    storeId: $storeId
+    isDeposit: $isDeposit
+    createdSince: $createdSince
+    createdTill: $createdTill
+    after: $after
+    first: $first
+    sort: $sort
+  ) {
+    totalCount
+    items {
+      ...pointsOperationFields
+    }
+  }
+}

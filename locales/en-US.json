@@ -64,7 +64,8 @@
       "orders": "Orders",
       "your_lists": "Your Lists",
       "checkout_defaults": "Checkout Defaults",
-      "list_details": "List Details"
+      "list_details": "List Details",
+      "loyalty": "Loyalty operations"
     }
   },
   "shared": {
@@ -93,8 +94,9 @@
             "profile": "@:common.links.profile",
             "addresses": "@:common.links.addresses",
             "orders": "@:common.links.orders",
-            "your_lists": "@:common.links.your_lists",
-            "checkout_defaults": "@:common.links.checkout_defaults"
+            "your_list": "@:common.links.your_list",
+            "checkout_defaults": "@:common.links.checkout_defaults",
+            "loyalty": "@:common.links.loyalty"
           },
           "settings": "Settings",
           "currency": "Currency",
@@ -152,7 +154,8 @@
           "orders": "@:common.links.orders",
           "your_lists": "@:common.links.your_lists",
           "checkout_defaults": "@:common.links.checkout_defaults",
-          "list_details": "@:common.links.list_details"
+          "list_details": "@:common.links.list_details",
+          "loyalty": "@:common.links.loyalty"
         }
       },
       "address_form": {
@@ -440,6 +443,12 @@
         "delete_button": "@:common.buttons.delete",
         "cancel_button": "@:common.buttons.cancel"
       }
+    },
+    "loyalty": {
+      "points_operation_form": {
+        "reason_label": "Reason",
+        "amount_label": "Amount"
+      }
     }
   },
   "pages": {
@@ -594,7 +603,8 @@
         "date_label": "@:common.labels.date",
         "total_label": "@:common.labels.total",
         "no_orders_img_alt": "No orders",
-        "no_orders_message": "There are no orders yet"
+        "no_orders_message": "There are no orders yet",
+        "loyalty_calculated_img_alt": "Loyalty calculated"
       },
       "order_details": {
         "title": "Order #{0}",
@@ -625,6 +635,15 @@
           "title": "Billing address",
           "phone_label": "@:common.labels.phone{':'}",
           "email_label": "@:common.labels.email{':'}"
+        },
+        "loyalty_card": {
+          "title": "Loyalty",
+          "learn_more_link": "Learn more",
+          "not_calculated": "When this order completes, you will receive some loyalty points.",
+          "calculated": "Congratulations! You've received {points} for this order.",
+          "points": "some points | <b>{n} point</b> | <b>{n} points</b>",
+          "learn_more_button": "Learn more",
+          "review_balance_button": "Review balance"
         }
       },
       "your_lists": {
@@ -830,6 +849,31 @@
       "links": {
         "home": "Home",
         "compare_products": "Compare products"
+      }
+    },
+    "loyalty": {
+      "points_operations": {
+        "balance_card": {
+          "title": "Current balance",
+          "points_label": "point | points"
+        },
+        "operations_list": {
+          "add_new_operation_button_mobile": "Add new",
+          "add_new_operation_button": "Add new operation",
+          "cancel_button": "@:common.buttons.cancel",
+          "create_button": "@:common.buttons.create",
+          "use_infinite_scrolling": "Use infinite scrolling",
+          "created_date_label": "Date",
+          "reason_label": "Description",
+          "amount_label": "Amount",
+          "balance_label": "Resulting balance",
+          "points": "{n} point | {n} points",
+          "no_operations_message": "There are no operations yet",
+          "new_operation_title": "Register operation",
+          "operations_title": "Loyalty operations",
+          "actions_label": "@:common.labels.actions",
+          "no_operations_img_alt": "No operations"
+        }
       }
     }
   }

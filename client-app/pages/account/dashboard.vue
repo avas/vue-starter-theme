@@ -43,8 +43,14 @@
                       class="text-gray-400"
                       v-t="'pages.account.dashboard.last_orders_card.order_number_label'"
                     ></span>
-                    <span class="font-extrabold overflow-hidden overflow-ellipsis">
-                      {{ itemData.item.number }}
+                    <span class="pr-4 flex items-center font-extrabold overflow-hidden overflow-ellipsis">
+                      {{ itemData.item?.number }}
+                      <VcImage
+                        v-if="itemData.item?.loyaltyCalculated"
+                        src="/static/images/dashboard/icons/award.svg"
+                        :alt="$t('pages.account.orders.loyalty_calculated_img_alt')"
+                        class="w-4 h-4 ml-0.5"
+                      ></VcImage>
                     </span>
                   </div>
 
@@ -158,7 +164,15 @@
                   @click="openOrderDetails(order)"
                 >
                   <td class="p-5 overflow-hidden overflow-ellipsis">
-                    {{ order.number }}
+                    <div class="flex items-center">
+                      {{ order.number }}
+                      <VcImage
+                        v-if="order.loyaltyCalculated"
+                        src="/static/images/dashboard/icons/award.svg"
+                        :alt="$t('pages.account.orders.loyalty_calculated_img_alt')"
+                        class="w-4 h-4 ml-1"
+                      ></VcImage>
+                    </div>
                   </td>
                   <td class="p-5 overflow-hidden overflow-ellipsis">
                     {{ order.purchaseOrderNumber }}
