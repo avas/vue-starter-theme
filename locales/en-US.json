@@ -635,6 +635,15 @@
           "title": "Billing address",
           "phone_label": "@:common.labels.phone{':'}",
           "email_label": "@:common.labels.email{':'}"
+        },
+        "loyalty_card": {
+          "title": "Loyalty",
+          "learn_more_link": "Learn more",
+          "not_calculated": "When this order completes, you will receive some loyalty points.",
+          "calculated": "Congratulations! You've received {points} for this order.",
+          "points": "some points | <b>{n} point</b> | <b>{n} points</b>",
+          "learn_more_button": "Learn more",
+          "review_balance_button": "Review balance"
         }
       },
       "your_lists": {
