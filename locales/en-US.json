@@ -603,7 +603,8 @@
         "date_label": "@:common.labels.date",
         "total_label": "@:common.labels.total",
         "no_orders_img_alt": "No orders",
-        "no_orders_message": "There are no orders yet"
+        "no_orders_message": "There are no orders yet",
+        "loyalty_calculated_img_alt": "Loyalty calculated"
       },
       "order_details": {
         "title": "Order #{0}",
