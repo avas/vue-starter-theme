@@ -19,6 +19,7 @@ query GetMyOrders($filter: String, $sort: String, $cultureName: String, $userId:
       number
       customerId
       purchaseOrderNumber
+      loyaltyCalculated
     }
   }
 }
