@@ -1,0 +1,12 @@
+#import "../../../fragments/pointsOperationFields.graphql"
+
+query getMyUserBalance($userId: String!, $storeId: String, $includePointsOperations: Boolean!) {
+  userBalance(userId: $userId, storeId: $storeId, includeOperations: $includePointsOperations) {
+    userId
+    storeId
+    amount
+    operations @include(if: $includePointsOperations) {
+      ...pointsOperationFields
+    }
+  }
+}

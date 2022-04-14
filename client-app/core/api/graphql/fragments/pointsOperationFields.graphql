@@ -1,0 +1,10 @@
+fragment pointsOperationFields on PointsOperationType {
+  id
+  createdDate
+  userId
+  storeId
+  reason
+  amount
+  balance
+  isDeposit
+}
