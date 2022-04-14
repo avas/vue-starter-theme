@@ -52,6 +52,9 @@ defineProps({
 .company-members-icon > div {
   mask: url(/static/images/dashboard/icons/members.svg) no-repeat center / contain;
 }
+.loyalty-icon > div {
+  mask: url(/static/images/dashboard/icons/award.svg) no-repeat center / contain;
+}
 
 /* Active/hover state styles */
 .router-link-active > div,
